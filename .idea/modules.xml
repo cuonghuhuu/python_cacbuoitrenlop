@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+<<<<<<< HEAD
+      <module fileurl="file://$PROJECT_DIR$/.idea/DesktopPython.iml" filepath="$PROJECT_DIR$/.idea/DesktopPython.iml" />
+=======
+      <module fileurl="file://$PROJECT_DIR$/.idea/buoi_1_tren_lop.iml" filepath="$PROJECT_DIR$/.idea/buoi_1_tren_lop.iml" />
+>>>>>>> aaba23314847f2f8e3194be6627fc07cbcc0404a
+    </modules>
+  </component>
+</project>

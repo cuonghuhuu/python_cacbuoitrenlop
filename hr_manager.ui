@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1180</width>
+    <height>820</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Quản lý Employee/Department - PostgreSQL</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QGroupBox" name="grpConnection">
+      <property name="title">
+       <string>Kết nối PostgreSQL</string>
+      </property>
+      <layout class="QGridLayout" name="gridLayoutConnection">
+       <item row="0" column="0">
+        <widget class="QLabel" name="lblHost">
+         <property name="text"><string>Host</string></property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="txtHost">
+         <property name="text"><string>localhost</string></property>
+        </widget>
+       </item>
+       <item row="0" column="2">
+        <widget class="QLabel" name="lblPort">
+         <property name="text"><string>Port</string></property>
+        </widget>
+       </item>
+       <item row="0" column="3">
+        <widget class="QLineEdit" name="txtPort">
+         <property name="text"><string>5432</string></property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <widget class="QLabel" name="lblDbName">
+         <property name="text"><string>Database</string></property>
+        </widget>
+       </item>
+       <item row="0" column="5">
+        <widget class="QLineEdit" name="txtDbName">
+         <property name="text"><string>postgres</string></property>
+        </widget>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="lblUser">
+         <property name="text"><string>User</string></property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="txtUser"/>
+       </item>
+       <item row="1" column="2">
+        <widget class="QLabel" name="lblPassword">
+         <property name="text"><string>Password</string></property>
+        </widget>
+       </item>
+       <item row="1" column="3" colspan="2">
+        <widget class="QLineEdit" name="txtPassword">
+         <property name="echoMode">
+          <enum>QLineEdit::Password</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="1" column="5">
+        <widget class="QPushButton" name="btnConnect">
+         <property name="text"><string>Kết nối</string></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QTabWidget" name="tabWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="tabManagers">
+       <attribute name="title">
+        <string>A - Danh sách MANAGER</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutManagers">
+        <item>
+         <widget class="QPushButton" name="btnLoadManagers">
+          <property name="text"><string>Lấy danh sách nhân viên có chức vụ MANAGER</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QTableWidget" name="tableManagers"/>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDepartment">
+       <attribute name="title">
+        <string>B - Insert Department</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayoutDepartment">
+        <item row="0" column="0"><widget class="QLabel" name="lblDeptId"><property name="text"><string>Department ID</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="txtDeptId"/></item>
+        <item row="1" column="0"><widget class="QLabel" name="lblDeptName"><property name="text"><string>Department Name</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="txtDeptName"/></item>
+        <item row="2" column="0"><widget class="QLabel" name="lblDeptManager"><property name="text"><string>Manager ID</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLineEdit" name="txtDeptManagerId"/></item>
+        <item row="3" column="0"><widget class="QLabel" name="lblDeptLocation"><property name="text"><string>Location ID</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLineEdit" name="txtDeptLocationId"/></item>
+        <item row="4" column="1"><widget class="QPushButton" name="btnInsertDepartment"><property name="text"><string>Insert Department</string></property></widget></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabInsertEmployee">
+       <attribute name="title">
+        <string>C - Insert Employee</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayoutInsertEmployee">
+        <item row="0" column="0"><widget class="QLabel" name="lblEmpId"><property name="text"><string>Employee ID</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="txtEmpId"/></item>
+        <item row="1" column="0"><widget class="QLabel" name="lblFirstName"><property name="text"><string>First Name</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="txtFirstName"/></item>
+        <item row="2" column="0"><widget class="QLabel" name="lblLastName"><property name="text"><string>Last Name</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLineEdit" name="txtLastName"/></item>
+        <item row="3" column="0"><widget class="QLabel" name="lblEmail"><property name="text"><string>Email</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLineEdit" name="txtEmail"/></item>
+        <item row="4" column="0"><widget class="QLabel" name="lblPhone"><property name="text"><string>Phone</string></property></widget></item>
+        <item row="4" column="1"><widget class="QLineEdit" name="txtPhone"/></item>
+        <item row="5" column="0"><widget class="QLabel" name="lblHireDate"><property name="text"><string>Hire Date (YYYY-MM-DD)</string></property></widget></item>
+        <item row="5" column="1"><widget class="QLineEdit" name="txtHireDate"/></item>
+        <item row="6" column="0"><widget class="QLabel" name="lblJobId"><property name="text"><string>Job ID</string></property></widget></item>
+        <item row="6" column="1"><widget class="QLineEdit" name="txtJobId"/></item>
+        <item row="7" column="0"><widget class="QLabel" name="lblSalary"><property name="text"><string>Salary</string></property></widget></item>
+        <item row="7" column="1"><widget class="QLineEdit" name="txtSalary"/></item>
+        <item row="8" column="0"><widget class="QLabel" name="lblCommission"><property name="text"><string>Commission Pct</string></property></widget></item>
+        <item row="8" column="1"><widget class="QLineEdit" name="txtCommissionPct"/></item>
+        <item row="9" column="0"><widget class="QLabel" name="lblManagerId"><property name="text"><string>Manager ID</string></property></widget></item>
+        <item row="9" column="1"><widget class="QLineEdit" name="txtManagerId"/></item>
+        <item row="10" column="0"><widget class="QLabel" name="lblDepartmentId"><property name="text"><string>Department ID</string></property></widget></item>
+        <item row="10" column="1"><widget class="QLineEdit" name="txtDepartmentId"/></item>
+        <item row="11" column="1"><widget class="QPushButton" name="btnInsertEmployee"><property name="text"><string>Insert Employee</string></property></widget></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabUpdateClark">
+       <attribute name="title">
+        <string>D - Update CLARK</string>
+       </attribute>
+       <layout class="QFormLayout" name="formLayoutUpdateClark">
+        <item row="0" column="0"><widget class="QLabel" name="lblUFirstName"><property name="text"><string>First Name mới</string></property></widget></item>
+        <item row="0" column="1"><widget class="QLineEdit" name="txtUFirstName"/></item>
+        <item row="1" column="0"><widget class="QLabel" name="lblULastName"><property name="text"><string>Last Name mới</string></property></widget></item>
+        <item row="1" column="1"><widget class="QLineEdit" name="txtULastName"/></item>
+        <item row="2" column="0"><widget class="QLabel" name="lblUEmail"><property name="text"><string>Email mới</string></property></widget></item>
+        <item row="2" column="1"><widget class="QLineEdit" name="txtUEmail"/></item>
+        <item row="3" column="0"><widget class="QLabel" name="lblUPhone"><property name="text"><string>Phone mới</string></property></widget></item>
+        <item row="3" column="1"><widget class="QLineEdit" name="txtUPhone"/></item>
+        <item row="4" column="0"><widget class="QLabel" name="lblUHireDate"><property name="text"><string>Hire Date mới (YYYY-MM-DD)</string></property></widget></item>
+        <item row="4" column="1"><widget class="QLineEdit" name="txtUHireDate"/></item>
+        <item row="5" column="0"><widget class="QLabel" name="lblUJobId"><property name="text"><string>Job ID mới</string></property></widget></item>
+        <item row="5" column="1"><widget class="QLineEdit" name="txtUJobId"/></item>
+        <item row="6" column="0"><widget class="QLabel" name="lblUSalary"><property name="text"><string>Salary mới</string></property></widget></item>
+        <item row="6" column="1"><widget class="QLineEdit" name="txtUSalary"/></item>
+        <item row="7" column="0"><widget class="QLabel" name="lblUCommission"><property name="text"><string>Commission mới</string></property></widget></item>
+        <item row="7" column="1"><widget class="QLineEdit" name="txtUCommissionPct"/></item>
+        <item row="8" column="0"><widget class="QLabel" name="lblUManager"><property name="text"><string>Manager ID mới</string></property></widget></item>
+        <item row="8" column="1"><widget class="QLineEdit" name="txtUManagerId"/></item>
+        <item row="9" column="0"><widget class="QLabel" name="lblUDepartment"><property name="text"><string>Department ID mới</string></property></widget></item>
+        <item row="9" column="1"><widget class="QLineEdit" name="txtUDepartmentId"/></item>
+        <item row="10" column="1"><widget class="QPushButton" name="btnUpdateClark"><property name="text"><string>Cập nhật nhân viên CLARK</string></property></widget></item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="tabDeleteMiller">
+       <attribute name="title">
+        <string>E - Delete MILLER</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="verticalLayoutDelete">
+        <item>
+         <widget class="QLabel" name="lblDeleteInfo">
+          <property name="text">
+           <string>Bấm nút bên dưới để xóa nhân viên có last_name = MILLER trong bảng employee.</string>
+          </property>
+          <property name="wordWrap"><bool>true</bool></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPushButton" name="btnDeleteMiller">
+          <property name="text"><string>Xóa MILLER</string></property>
+         </widget>
+        </item>
+        <item>
+         <spacer name="verticalSpacer">
+          <property name="orientation"><enum>Qt::Vertical</enum></property>
+          <property name="sizeHint" stdset="0">
+           <size><width>20</width><height>40</height></size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item>
+     <widget class="QGroupBox" name="grpLog">
+      <property name="title"><string>Log / Kết quả</string></property>
+      <layout class="QVBoxLayout" name="verticalLayoutLog">
+       <item>
+        <widget class="QTextEdit" name="txtLog">
+         <property name="readOnly"><bool>true</bool></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1180</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
